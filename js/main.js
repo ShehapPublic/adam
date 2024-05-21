@@ -1,7 +1,10 @@
 // /////////////////////
 window.addEventListener("scroll", function () {
     let nav = document.querySelector(".navbar");
-    nav.classList.toggle("fix", window.scrollY > 150);
+    let scroll4 =  window.scrollY.valueOf()
+    nav.classList.toggle("fix0",  scroll4 > 150);
+    console.log(scroll4);
+    
 }) 
 //////////////////////////
 window.addEventListener("scroll" , function () {
@@ -17,6 +20,11 @@ scrollUp.addEventListener("click", function () {
         behavior:"smooth"
     })
 })
+
+
+
+
+
 
 var owl = $('#slider_1');
 owl.owlCarousel({
@@ -158,43 +166,43 @@ owl.owlCarousel({
         }
     }
 });
-
-
-
-// counter
-var a = 0;
-$(window).scroll(function() {
-
-  var oTop = $('#counter').offset().top - window.innerHeight;
-  if (a == 0 && $(window).scrollTop() > oTop) {
-    $('.counter-value').each(function() {
-      var $this = $(this),
-        countTo = $this.attr('data-count');
-      $({
-        countNum: $this.text()
-      }).animate({
-          countNum: countTo
+// //////////////////////////////////////////////
+var owl = $('#slider_4');
+owl.owlCarousel({
+    items:4, 
+  // items change number for slider display on desktop
+  
+    loop:true,
+    margin:10,
+    navigation: true,
+    autoplay: true,
+    autoplayHoverPause: true,
+    autoplayTimeout:3000,
+    smartSpeed: 800,
+    rtl:true,
+    nav: true,
+    navElement: "dots",
+    navText:[`<i class="fa-solid fa-chevron-right"></i>` , `<i class="fa-solid fa-chevron-left"></i>`],
+    paginationSpeed : 800,
+    dots: false,  
+    dotsEach:true,
+    responsive:{
+        0:{
+            items: 1,
         },
-
-        {
-
-          duration: 4000,
-          easing: 'swing',
-          step: function() {
-            $this.text(Math.floor(this.countNum));
-          },
-          complete: function() {
-            $this.text(this.countNum);
-            //alert('finished');
-          }
-
-        });
-    });
-    a = 1;
-  }
-
+        600:{
+            items: 2,
+        },
+        1100:{
+            items: 5,
+        },
+        1200:{
+            items:5
+        }
+    }
 });
-
+// //////////////////////////////////////////////
+ 
 
 
 
