@@ -2,7 +2,7 @@
 window.addEventListener("scroll", function () {
     let nav = document.querySelector(".navbar");
     let scroll4 =  window.scrollY.valueOf()
-    nav.classList.toggle("fix0",  scroll4 > 150);
+    nav.classList.toggle("fix",  scroll4 > 150);
     console.log(scroll4);
     
 }) 
